@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portafolio – Agustina Carquen</title>
+
+  
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+
+  :root{
+    --magenta: #3653A3;
+    --rosa: #CDDB30;
+    --rosa-claro: #FFD3EC;
+    --lila: #3653A3;
+    --durazno: #FFC7A5;
+    --bg: #FFF6FB;
+    --text: #222;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;font-family:'Montserrat',sans-serif}
+  body{background:var(--bg);color:var(--text);line-height:1.6;}
+
+  
+  body::before{
+    content:"";
+    position:fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    pointer-events:none;
+    background-image: radial-gradient(#ff9fcf 2px, transparent 2px);
+    background-size:28px 28px;
+    opacity:.55;
+    animation:moverPuntos 12s linear infinite;
+    z-index:-1;
+  }
+  @keyframes moverPuntos {
+    0%{background-position:0 0;}
+    100%{background-position:200px 200px;}
+  }
+
+  .hero{
+    padding:100px 20px;
+    background:linear-gradient(135deg,var(--rosa),var(--lila));
+    color:white;
+    text-align:left;
+  }
+  .hero-inner{max-width:1100px;margin:0 auto}
+  .nombre{font-size:3.6rem;font-weight:700;text-transform:lowercase}
+  .sub{margin-top:8px;opacity:0.9;}
+
+  
+  .container{max-width:1100px;margin:-40px auto 60px;padding:0 20px}
+  .card{
+    background:#CDDB30;
+    border-radius:20px;
+    padding:34px;
+    margin-bottom:28px;
+    box-shadow:0 12px 30px rgba(198,59,122,0.12);
+  }
+
+  .intro h2{color:var(--magenta);font-size:2.4rem;margin-bottom:10px}
+  .datos{margin-top:18px}
+  .datos p{margin:4px 0}
+
+  .habilidades h2{color:var(--magenta);font-size:2rem;margin-bottom:14px;text-align:center}
+  .herramientas,.skills{
+    display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:14px;
+  }
+  .chip{
+    background:var(--rosa-claro);
+    padding:10px 18px;
+    border-radius:12px;
+    font-weight:700;
+    animation:colorPulse 4s infinite ease-in-out;
+  }
+  .chip:hover{background:var(--magenta);color:rgb(112, 43, 43);transform:scale(1.1)}
+
+  @keyframes colorPulse{
+    0%{background:var(--rosa-claro);}
+    50%{background:var(--lila);}
+    100%{background:var(--rosa-claro);}
+  }
+
+  .skill{
+    background:linear-gradient(90deg,var(--durazno),var(--rosa-claro));
+    padding:10px 16px;
+    border-radius:12px;
+    animation:flotar 3s infinite ease-in-out;
+  }
+  @keyframes flotar{
+    0%{transform:translateY(0)}
+    50%{transform:translateY(-6px)}
+    100%{transform:translateY(0)}
+  }
+
+  .proyectos{padding:14px}
+  .proyectos h2{color:var(--magenta);font-size:2rem;margin-bottom:14px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+  .proyecto{
+    background:linear-gradient(180deg,white,#fff7fb);
+    padding:20px;
+    border-radius:14px;
+    transition:.3s;
+    box-shadow:0 8px 20px rgba(199,155,255,0.08);
+  }
+  .proyecto:hover{
+    transform:translateY(-8px);
+    background:linear-gradient(180deg,var(--rosa-claro),var(--durazno));
+    box-shadow:0 18px 36px rgba(198,59,122,0.18);
+  }
+
+  .contacto{text-align:center}
+  .contacto h2{color:var(--magenta);font-size:2.2rem}
+
+  
+  .footer{text-align:center;padding:25px;color:#666}
+  
+
+.intro-contenido {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.intro-texto {
+  flex: 1 1 55%;
+}
+
+.intro-texto h2 {
+  font-size: 2.8rem;
+  color: var(--magenta);
+  margin-bottom: 15px;
+}
+
+.intro-texto p {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+.intro-foto {
+  flex: 1 1 40%;
+  display: flex;
+  justify-content: center;
+}
+
+.intro-foto img {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 40px; 
+  box-shadow: 0 0 25px rgba(255, 140, 220, 0.8);
+  animation: brillarSuave 3s ease-in-out infinite;
+}
+
+@keyframes brillarSuave {
+  0% { box-shadow: 0 0 18px rgba(255,140,220,0.6); }
+  50% { box-shadow: 0 0 32px rgba(255,160,240,1); }
+  100% { box-shadow: 0 0 18px rgba(255,140,220,0.6); }
+}
+
+@media (max-width: 700px) {
+  .intro-contenido {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .intro-foto img {
+    max-width: 260px;
+  }
+}
+
+.carousel-container{
+  position:relative;
+  max-width:900px;       
+  margin:auto;
+  overflow:hidden;
+  border-radius:22px;
+  box-shadow:0 20px 45px rgba(0,0,0,0.15);
+}
+
+.carousel-track{
+  display:flex;
+  transition:transform .6s cubic-bezier(.4,0,.2,1);
+}
+
+.slide{
+  min-width:100%;
+  position:relative;
+  padding:10px;
+}
+
+.slide img{
+  width:100%;
+  height:500px;          
+  object-fit:cover;
+  border-radius:22px;
+  box-shadow:0 12px 35px rgba(0,0,0,0.2);
+}
+
+.slide p{
+  position:absolute;
+  bottom:25px;
+  left:50%;
+  transform:translateX(-50%);
+  background:rgba(214,65,141,0.88);
+  padding:12px 20px;
+  border-radius:14px;
+  color:rgb(255, 255, 255);
+  font-weight:700;
+  font-size:1.2rem;       
+  backdrop-filter:blur(8px);
+}
+
+.carousel-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:var(--magenta);
+  color:white;
+  border:none;
+  padding:14px 20px;    
+  border-radius:50%;
+  font-size:2.2rem;      
+  cursor:pointer;
+  transition:.25s;
+}
+.carousel-btn:hover{
+  background:var(--rosa);
+  transform:translateY(-50%) scale(1.12);
+}
+
+.contacto {
+  background: #CDDB30;
+  border-radius: 25px;
+  padding: 120px 20px 60px; 
+  margin-top: 60px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.contacto h2 {
+  font-size: 3rem;
+  color: var(--magenta);
+  font-weight: 800;
+  text-transform: lowercase;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 2; 
+}
+
+.contacto p {
+  font-size: 1.4rem;
+  margin-bottom: 40px;
+  color: #000;
+  position: relative;
+  z-index: 2;
+}
+
+.formas-contacto {
+  position: absolute;
+  top: 0;          
+  left: 0;
+  width: 100%;
+  height: 150px;    
+  overflow: visible;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.formas-contacto img {
+  position: absolute;
+  width: 140px;
+  opacity: 0.9;
+  animation: flotarFormas 6s infinite ease-in-out alternate;
+}
+
+.forma1 { top: -10px; left: 5%; }
+.forma2 { top: -25px; left: 28%; }
+.forma3 { top: -5px; left: 50%; transform: translateX(-50%); }
+.forma4 { top: -30px; right: 25%; }
+.forma5 { top: -5px; right: 5%; }
+
+@keyframes flotarFormas {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-12px); }
+}
+
+.contacto-pngs {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  margin-top: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.contacto-pngs img {
+  width: 170px;
+  transition: transform .35s ease;
+}
+
+.contacto-pngs img:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 650px) {
+  .formas-contacto img {
+    width: 90px;
+    opacity: .7;
+  }
+
+  .contacto h2 {
+    font-size: 2.3rem;
+  }
+
+  .contacto p {
+    font-size: 1.15rem;
+  }
+
+  .contacto-pngs img {
+    width: 125px;
+  }
+}
+
+.prev{left:15px;}
+.next{right:15px;}
+  </style>
+</head>
+
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <h1 class="nombre"> Portafolio </h1>
+      <p class="sub">diseño gráfico </p>
+    </div>
+  </header>
+
+  <main class="container">
+
+   <section class="intro card">
+  <div class="intro-contenido">
+
+    <div class="intro-texto">
+      <h2>THIS IS ME</h2>
+      <p>
+        ¡Hola! Soy Agustina, estudiante de Diseño Gráfico. Te presentaré mi portafolio y sí,
+        soy fan de las ideas coloridas y con actitud. Me encanta combinar color, forma y emoción
+        para crear marcas que cuentan historias. Mis influencias vienen de la cultura oriental y
+        occidental, del pop, el anime y sí… también de los chismes, porque creo que el diseño vive
+        de lo que nos conecta y nos hace hablar.
+      </p>
+
+      <div class="datos">
+        <p><strong>Correo:</strong> agustinacarquen192@uniacc.edu</p>
+        <p><strong>Teléfono:</strong> +56988051950</p>
+        <p><strong>Nacionalidad:</strong> Chileeee!</p>
+      </div>
+    </div>
+
+    <div class="intro-foto">
+      <img src="./foto de mi .png" 
+    </div>
+
+</section>
+    </div>
+
+  </div>
+</section>
+
+    <section class="habilidades">
+      <h2>MIS HABILIDADES</h2>
+      <div class="herramientas">
+        <span class="chip">Photoshop</span>
+        <span class="chip">Adobe Illustrator</span>
+        <span class="chip">Indesing</span>
+        <span class="chip">Canva</span>
+      </div>
+
+      <div class="skills">
+        <span class="skill">creativa</span>
+        <span class="skill">intuitiva</span>
+        <span class="skill">conceptualizadora</span>
+      </div>
+    </section>
+
+  </main>
+
+  <section class="carousel-section">
+    <h2 class="carousel-title" style="text-align:center;color:var(--magenta);font-size:2.4rem;margin-bottom:20px;">MIS PROYECTOS</h2>
+
+    <div class="carousel-container">
+      <button class="carousel-btn prev">❮</button>
+
+      <div class="carousel-track">
+        <div class="slide">
+          <img src="./Proyecto 1 .png">
+          <p><strong>Ai</strong> — ilustraciones vectoriales y patrones</p>
+        </div>
+
+        <div class="slide">
+          <img src="./Proyecto 2.png">
+          <p><strong>Ps</strong> — portada de revistas</p>
+        </div>
+
+        <div class="slide">
+          <img src="./Proyecto 3.png">
+          <p><strong>Id</strong> — diseño editorial</p>
+        </div>
+
+        <div class="slide">
+          <img src="./Proyecto 4.png">
+          <p><strong>Ai</strong> — juego de mesa inspirado en Clue</p>
+        </div>
+
+        <div class="slide">
+          <img src="./Proyecto 5.png">
+          <p><strong>Ai</strong> — afiches publicitarios</p>
+        </div>
+
+        <div class="slide">
+          <img src="./Proyecto 6.png">
+          <p>creación de marca basada en usuario</p>
+        </div>
+
+        <div class="slide">
+          <img src="./Proyecto 7.png">
+          <p><strong>Id</strong> — guía de impresión</p>
+        </div>
+
+        <div class="slide">
+          <img src="./Proyecto 8.png">
+          <p><strong>Ps</strong> — trabajos de publicidad</p>
+        </div>
+      </div>
+
+      <button class="carousel-btn next">❯</button>
+    </div>
+  </section>
+
+  <section class="contacto card">
+
+  <div class="formas-contacto">
+    <img src="./forma -01.png" class="forma1">
+    <img src="./forma -02.png" class="forma2">
+    <img src="./forma -03.png" class="forma3">
+    <img src="./forma -04.png" class="forma4">
+    <img src="./forma -05.png" class="forma5">
+  </div>
+
+  <h2>trabajemos juntos</h2>
+  <p>muchas gracias por ver mi trabajo</p>
+
+  <div class="contacto-pngs">
+    <img src="./Chibi 1.png">
+    <img src="./chibi 2.png">
+    <img src="./chibi 3.png">
+  </div>
+
+</section>
+   
+</section>
+  </section>
+
+  
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> Agustina Carquen</p>
+  </footer>
+
+  
+  <script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  let index = 0;
+  const track = document.querySelector('.carousel-track');
+  const slides = document.querySelectorAll('.slide');
+
+  function updateCarousel() {
+    track.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  document.querySelector('.prev').addEventListener('click',()=>{
+    index = (index - 1 + slides.length) % slides.length;
+    updateCarousel();
+  });
+
+  document.querySelector('.next').addEventListener('click',()=>{
+    index = (index + 1) % slides.length;
+    updateCarousel();
+  });
+  </script>
+
+</body>
+</html>
